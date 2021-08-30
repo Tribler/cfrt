@@ -1,0 +1,52 @@
+&module experiments.cfrt.crdt_module.CrdtModule
+
+@0:1 start_ipv8
+
+@0:2 crdt_set_type bloom
+@0:3 crdt_add count=512 {1}
+@0:3 crdt_start_merge_task
+
+@0:10 crdt_start_stats_task
+@0:10 crdt_start_add_task    mean_count=1
+@0:10 crdt_start_remove_task mean_count=1
+
+@0:125 crdt_stop_add_task
+@0:125 crdt_stop_remove_task
+@0:130 crdt_stop_merge_task
+@0:130 crdt_stop_stats_task
+
+
+@0:140 crdt_reset_stats
+
+@0:142 crdt_set_type optor
+@0:143 crdt_add count=512 {1}
+@0:143 crdt_start_merge_task
+
+@0:150 crdt_start_stats_task
+@0:150 crdt_start_add_task    mean_count=1
+@0:150 crdt_start_remove_task mean_count=1
+
+@0:265 crdt_stop_add_task
+@0:265 crdt_stop_remove_task
+@0:270 crdt_stop_merge_task
+@0:270 crdt_stop_stats_task
+
+
+@0:280 crdt_reset_stats
+
+@0:282 crdt_set_type or
+@0:283 crdt_add count=512 {1}
+@0:283 crdt_start_merge_task
+
+@0:290 crdt_start_stats_task
+@0:290 crdt_start_add_task    mean_count=1
+@0:290 crdt_start_remove_task mean_count=1
+
+@0:405 crdt_stop_add_task
+@0:405 crdt_stop_remove_task
+@0:410 crdt_stop_merge_task
+@0:410 crdt_stop_stats_task
+
+
+@0:420 stop_ipv8
+@0:430 stop

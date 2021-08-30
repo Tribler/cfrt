@@ -1,0 +1,17 @@
+&module experiments.cfrt.cfrt_module.CfrtModule
+&module experiments.cfrt.cfrt_generator.CfrtScenarioGenerator
+
+@0:1 start_ipv8
+@0:2 init_root                                  {1}
+@0:3 introduce_peers_cfrt
+
+@0:10 set_datasource '/usr/bin/sqlite3 -csv -separator ";" /home/ewoutb/metadata.db "select HEX(infohash),timestamp,torrent_date,tracker_info,title from ChannelNode where metadata_type = 300 order by random()"'
+@0:30 add_datasource_items {1}
+
+@0:1685 introduce_peers_cfrt
+@0:1690 cfrt_set_chaos_monkey 0
+
+@0:1700 verify_datasource_items {2}
+
+@0:9000 stop_ipv8
+@0:9020 stop

@@ -1,0 +1,13 @@
+&module experiments.cfrt.cfrt_module.CfrtModule
+@0:1 start_ipv8
+@0:1 cfrt_only_dirty False
+@0:2 init_root                                  {1}
+@0:3 cfrt_start_merge_task
+@0:8 cfrt_root_size_infinite
+@0:9 cfrt_start_stats_task
+@0:10 cfrt_start_add_task       mean_count=3
+@0:125 cfrt_stop_add_task
+@0:130 cfrt_stop_merge_task
+@0:130 cfrt_stop_stats_task
+@0:140 stop_ipv8
+@0:150 stop
